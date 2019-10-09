@@ -1,0 +1,43 @@
+{
+  "name": "props-type",
+  "version": "0.1.0",
+  "description": "Utility type that defines the type of the React component through propTypes and defaultProps in TypeScript",
+  "license": "MIT",
+  "types": "src/index.d.ts",
+  "main": "src/index.js",
+  "repository": "https://github.com/taehwanno/props-type",
+  "author": "Taehwan Noh <taehwanno.dev@gmail.com>",
+  "bugs": "https://github.com/taehwanno/props-type/issues",
+  "homepage": "https://github.com/taehwanno/props-type#readme",
+  "keywords": [
+    "typescript",
+    "utility",
+    "types",
+    "static-typing"
+  ],
+  "scripts": {
+    "lint": "eslint src --ext .ts,.tsx",
+    "prettier": "prettier --list-different 'src/**/*.{ts,tsx}'",
+    "prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'",
+    "tsc": "tsc -p . --noEmit",
+    "tsc:watch": "tsc -p . --noEmit -w",
+    "tsd": "tsd"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.7.3",
+    "@types/react": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.3.0",
+    "husky": "^3.0.8",
+    "lint-staged": "^9.4.1",
+    "prettier": "^1.18.2",
+    "react": "^16.10.1",
+    "tsd": "^0.9.0",
+    "typescript": "^3.6.3"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.4"
+  }
+}
