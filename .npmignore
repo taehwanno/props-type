@@ -4,3 +4,5 @@ husky.config.js
 lint-staged.config.js
 prettier.config.js
 tsconfig.json
+
+src/index.test-d.ts
