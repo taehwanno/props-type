@@ -12,6 +12,8 @@ const propTypes = {
   bool: PropTypes.bool,
   string: PropTypes.string,
   func: PropTypes.func,
+  null: PropTypes.bool,
+  undefined: PropTypes.bool,
   boolIsRequired: PropTypes.bool.isRequired,
   stringIsRequired: PropTypes.string.isRequired,
   funcIsRequired: PropTypes.func.isRequired,
@@ -20,6 +22,8 @@ const propTypes = {
 const defaultProps = {
   bool: false,
   string: '',
+  null: null,
+  undefined: undefined,
   func(event: React.MouseEvent<HTMLButtonElement>) {}, // eslint-disable-line @typescript-eslint/no-unused-vars
 };
 
@@ -39,6 +43,8 @@ declare const props2: PropsWithDefaultProps;
   expectType<boolean | null | undefined>(props1.bool);
   expectType<string | null | undefined>(props1.string);
   expectType<((...args: any[]) => any) | null | undefined>(props1.func);
+  expectType<boolean | null | undefined>(props1.null);
+  expectType<boolean | null | undefined>(props1.undefined);
 
   // Non-Optional (isRequired)
   expectType<boolean>(props1.boolIsRequired);
@@ -52,6 +58,8 @@ declare const props2: PropsWithDefaultProps;
   expectType<boolean>(props2.bool);
   expectType<string>(props2.string);
   expectType<(event: React.MouseEvent<HTMLButtonElement>) => void>(props2.func);
+  expectType<boolean | null>(props2.null);
+  expectType<boolean | undefined>(props2.undefined);
 
   // Non-Optional (isRequired)
   expectType<boolean>(props2.boolIsRequired);
