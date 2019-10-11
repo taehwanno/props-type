@@ -1,6 +1,6 @@
 {
   "name": "props-type",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Utility type that defines the type of the React component through propTypes and defaultProps in TypeScript",
   "license": "MIT",
   "types": "src/index.d.ts",
