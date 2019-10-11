@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "lint": "eslint src --ext .ts,.tsx",
-    "prettier": "prettier --list-different 'src/**/*.{ts,tsx}'",
+    "prettier": "prettier --check 'src/**/*.{ts,tsx}'",
     "prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'",
     "tsc": "tsc -p . --noEmit",
     "tsc:watch": "tsc -p . --noEmit -w",
