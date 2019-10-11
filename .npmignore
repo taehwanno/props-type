@@ -1,0 +1,6 @@
+.editorconfig
+.eslintrc
+husky.config.js
+lint-staged.config.js
+prettier.config.js
+tsconfig.json
