@@ -1,4 +1,4 @@
-# props-type
+# props-type [![npm version](https://badge.fury.io/js/props-type.svg)](https://badge.fury.io/js/props-type) ![github actions](https://github.com/taehwanno/props-type/workflows/Node%20CI/badge.svg)
 
 Utility type that defines the type of the React component props through `propTypes` and `defaultProps` in TypeScript
 
