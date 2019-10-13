@@ -27,7 +27,7 @@ $ yarn add --dev props-type
 ## Prerequisite
 
 - `typescript` >= 2.8 (recommend 3.0+ because of [support for `defaultProps` in JSX](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#support-for-defaultprops-in-jsx))
-- `prop-types` >= 15.5.4
+- `@types/prop-types` >= 15.5.4
 
 ## Usage
 

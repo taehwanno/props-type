@@ -38,6 +38,6 @@
     "typescript": "^3.6.3"
   },
   "peerDependencies": {
-    "prop-types": "^15.5.4"
+    "@types/prop-types": "^15.5.4"
   }
 }
