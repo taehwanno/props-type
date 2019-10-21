@@ -18,10 +18,10 @@ Utility type that defines the type of the React component props through `propTyp
 
 ```shell
 # with NPM
-$ npm install --save-dev props-type
+$ npm install props-type
 
 # with Yarn
-$ yarn add --dev props-type
+$ yarn add props-type
 ```
 
 ## Prerequisite
