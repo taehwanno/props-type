@@ -1,6 +1,8 @@
 # props-type [![npm version](https://badge.fury.io/js/props-type.svg)](https://badge.fury.io/js/props-type) ![github actions](https://github.com/taehwanno/props-type/workflows/Node%20CI/badge.svg)
 
-Utility type that defines the type of the React component props through `propTypes` and `defaultProps` in TypeScript
+Utility type that defines the type of the React component props through `propTypes` and `defaultProps` in TypeScript.
+
+If you want to know about story of creating this package, see [the blog post](https://medium.com/@taehwanno.dev/react-component-props-typing-with-proptypes-and-defaultprops-in-typescript-233eadb86314) (Korean)
 
 **Table of contents**
 
