@@ -1,6 +1,8 @@
 # props-type [![npm version](https://badge.fury.io/js/props-type.svg)](https://badge.fury.io/js/props-type) ![github actions](https://github.com/taehwanno/props-type/workflows/Node%20CI/badge.svg)
 
-Utility type that defines the type of the React component props through `propTypes` and `defaultProps` in TypeScript
+Utility type that defines the type of the React component props through `propTypes` and `defaultProps` in TypeScript.
+
+If you want to know about story of creating this package, see [the blog post](https://medium.com/@taehwanno.dev/react-component-props-typing-with-proptypes-and-defaultprops-in-typescript-233eadb86314) (Korean)
 
 **Table of contents**
 
@@ -273,12 +275,26 @@ Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
 ```
 
-`type` prop is inferenced to `string` (not a `'button' | 'submit' | 'reset'` union type) because `prop-types` typescript type declaration currently have problems related to `InferProps` type (in `@types/prop-types`). If you want to inference `oneOf` as union type, this workaround can help you.
+`type` prop is inferenced to `string` (not a `'button' | 'submit' | 'reset'` union type) because array literal in TypeScript are widen to specific type. If you want to inference `oneOf` as union type, this workaround can help you.
 
 ```tsx
 type ButtonProps = PropsType<typeof propTypes, typeof defaultProps> & {
   type: 'button' | 'submit' | 'reset';
 };
+```
+
+If you use TypeScript 3.4+, it can be solved by using [`const` assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions).
+
+```tsx
+const propTypes = {
+  type: PropTypes.oneOf(['button', 'submit', 'reset'] as const),
+};
+
+const defaultProps = {
+  type: 'button' as const,
+};
+
+type ButtonProps = PropsType<typeof propTypes, typeof defaultProps>;
 ```
 
 ## Thanks
