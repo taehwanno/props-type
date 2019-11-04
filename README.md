@@ -273,12 +273,26 @@ Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
 ```
 
-`type` prop is inferenced to `string` (not a `'button' | 'submit' | 'reset'` union type) because `prop-types` typescript type declaration currently have problems related to `InferProps` type (in `@types/prop-types`). If you want to inference `oneOf` as union type, this workaround can help you.
+`type` prop is inferenced to `string` (not a `'button' | 'submit' | 'reset'` union type) because array literal in TypeScript are widen to specific type. If you want to inference `oneOf` as union type, this workaround can help you.
 
 ```tsx
 type ButtonProps = PropsType<typeof propTypes, typeof defaultProps> & {
   type: 'button' | 'submit' | 'reset';
 };
+```
+
+If you use TypeScript 3.4+, it can be solved by using [`const` assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions).
+
+```tsx
+const propTypes = {
+  type: PropTypes.oneOf(['button', 'submit', 'reset'] as const),
+};
+
+const defaultProps = {
+  type: 'button' as const,
+};
+
+type ButtonProps = PropsType<typeof propTypes, typeof defaultProps>;
 ```
 
 ## Thanks
